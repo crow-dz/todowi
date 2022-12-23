@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:todowi/blocs/bloc/tasks_bloc.dart';
 import 'package:todowi/models/task.dart';
 
 import 'blocs/bloc_exports.dart';

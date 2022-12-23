@@ -6,6 +6,27 @@ import '../widgets/task_list.dart';
 
 class TasksScreen extends StatelessWidget {
   TasksScreen({super.key});
+  TextEditingController titleController = TextEditingController();
+  void _addTask(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).viewInsets.bottom),
+            child: Column(
+              children: [
+                TextField(
+                  controller: titleController,
+                )
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +37,11 @@ class TasksScreen extends StatelessWidget {
           appBar: AppBar(
             title: const Text('Tasks App'),
             actions: [
-              IconButton(onPressed: () {}, icon: const Icon(Icons.add))
+              IconButton(
+                  onPressed: () {
+                    _addTask(context);
+                  },
+                  icon: const Icon(Icons.add))
             ],
           ),
           body: Column(
@@ -29,7 +54,7 @@ class TasksScreen extends StatelessWidget {
             ],
           ),
           floatingActionButton: FloatingActionButton(
-            onPressed: () {},
+            onPressed: () => _addTask(context),
             tooltip: "Add Task",
             child: const Icon(Icons.add),
           ),
