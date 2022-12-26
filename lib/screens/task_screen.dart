@@ -3,10 +3,11 @@ import 'package:todowi/blocs/bloc_exports.dart';
 
 import '../models/task.dart';
 import '../widgets/task_list.dart';
+import 'add_task_screen.dart';
 
 class TasksScreen extends StatelessWidget {
-  TasksScreen({super.key});
-  TextEditingController titleController = TextEditingController();
+  TasksScreen({super.key}) : super();
+
   void _addTask(BuildContext context) {
     showModalBottomSheet(
       context: context,
@@ -15,13 +16,7 @@ class TasksScreen extends StatelessWidget {
           child: Container(
             padding: EdgeInsets.only(
                 bottom: MediaQuery.of(context).viewInsets.bottom),
-            child: Column(
-              children: [
-                TextField(
-                  controller: titleController,
-                )
-              ],
-            ),
+            child: const AddTaskScreen(),
           ),
         );
       },

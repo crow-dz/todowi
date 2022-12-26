@@ -17,8 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          TasksBloc()..add(AddTask(task: Task(title: "test task"))),
+      create: (context) => TasksBloc(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

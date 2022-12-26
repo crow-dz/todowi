@@ -5,5 +5,5 @@ class TasksState extends Equatable {
   const TasksState({this.allTasks = const <Task>[]});
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [allTasks];
 }
